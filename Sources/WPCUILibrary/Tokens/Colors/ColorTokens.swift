@@ -56,8 +56,11 @@ public extension Color {
             .uppercased()
 
         guard cleaned.count == 6 else {
-            self = Color(.sRGB, red: 0, green: 0, blue: 0, opacity: alpha)
-            return
+          #if DEBUG
+          assertionFailure("Invalid hex: \(hex)")
+          #endif
+          self = Color(.sRGB, red: 0, green: 0, blue: 0, opacity: alpha)
+          return
         }
 
         var rgb: UInt64 = 0

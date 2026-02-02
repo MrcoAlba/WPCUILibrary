@@ -6,8 +6,8 @@ import PackageDescription
 let package = Package(
     name: "WPCUILibrary",
     platforms: [
-        .iOS(SupportedPlatform.IOSVersion.v26),
-        .macOS(SupportedPlatform.MacOSVersion.v26)
+        .iOS(.v18),
+        .macOS(.v15)
     ],
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
